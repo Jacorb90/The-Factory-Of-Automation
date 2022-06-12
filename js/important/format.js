@@ -31,7 +31,7 @@ function smallFormat(num) {
 	if (num === null || num === undefined) return "NaN"
 	if (num.gte(0.01)) return toPlaces(num, 3, 1e9);
 	else if (num.gte("1e-1000")) return exponentialFormat(num, 3, true);
-	else if (num.gte("1e-1000000")) return "e"+formatWhole(decimal.log10(), 2);
+	else if (num.gte("1e-1000000")) return "e"+formatWhole(num.log10(), 2);
 	else return "1/"+format(num.pow(-1))
 }
 
